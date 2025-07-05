@@ -10,7 +10,7 @@ const ProductContextProvider = ({children}) => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:8080/api/products");
+            const response = await axios.get("https://renart-case-study.onrender.com/api/products");
             setData(response.data.products);
         } catch (err) {
             console.error(err);
