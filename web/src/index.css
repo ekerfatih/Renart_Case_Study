@@ -1,0 +1,31 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --color-yellow-gold: #E6CA97;
+        --color-white-gold: #D9D9D9;
+        --color-rose-gold: #E1A4A9;
+    }
+
+    @font-face {
+        font-family: 'Avenir-Book';
+        src: url('assets/Fonts/avenir/Avenir-Book.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url('assets/Fonts/montserat/Montserrat-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url('assets/Fonts/montserat/Montserrat-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+    }
+}
+
+
