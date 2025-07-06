@@ -14,8 +14,8 @@
                 style={{backgroundColor: `var(--color-${color}-gold)`}}
                 className={`
                 w-full h-full rounded-full bg-${color}-gold
-                peer-checked:ring-1 peer-checked:ring-black
-                peer-checked:ring-offset-4 peer-checked:ring-offset-white
+                peer-checked:ring-1 peer-checked:ring-stone-800
+                peer-checked:ring-offset-3 peer-checked:ring-offset-white
                 `}
             />
         </label>

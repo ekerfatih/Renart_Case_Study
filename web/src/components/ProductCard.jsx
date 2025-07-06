@@ -1,4 +1,4 @@
-﻿import React, {useState} from 'react';
+﻿import React, {useEffect, useState} from 'react';
 import RadioButton from "./RadioButton.jsx";
 import StarRating from "./StarRating.jsx";
 import {toCamel} from "../utilty/helper.js";
@@ -11,7 +11,14 @@ const ProductCard = (props) => {
     const starCount = Math.floor(popularityScore * 10) / 2;
 
     return (
-        <div className="min-w-[300px] h-full flex flex-col snap-start">
+        <div className="
+        min-[300px]:min-w-[100%]
+         sm:min-w-[44%]
+         md:min-w-[45%]
+         xl:min-w-[30%]
+         2xl:min-w-[17%]
+        mb-20
+         flex flex-col snap-start">
             <img className="rounded-4xl object-cover aspect-square" src={image} alt="######"/>
             <div className="text-left">
                 <p className="font-montserrat-medium text-[15px] pt-4">{name}</p>

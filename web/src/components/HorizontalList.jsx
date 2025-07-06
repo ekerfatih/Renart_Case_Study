@@ -20,21 +20,29 @@ const HorizontalList = () => {
     console.log(products)
     if (!products) return null;
     return (
-        <div className="horizontalList relative flex justify-between w-full h-[500px] gap-3">
+        <div className="horizontalList relative flex justify-between w-full h-fitllll lg:gap-3">
             {/*<span className="cursor-pointer flex-[0.13] flex items-center justify-center h-full">{'<'}</span>*/}
             <MdChevronLeft onClick={slideLeft}
-                           className="w-1/2 cursor-pointer flex items-center justify-center h-2/3"
+                           className="chevron"
                            size={1}/>
             <div
                 id="slider"
-                className="flex overflow-x-scroll scroll whitespace-nowrap !scroll-smooth gap-42 h-full snap-x snap-mandatory"
+                className="flex overflow-x-scroll whitespace-nowrap !scroll-smooth
+                  gap-42
+                  min-[300px]:gap-0
+                  sm:gap-2
+                  md:gap-18
+                  lg:gap-10
+                  xl:gap-15
+                  2xl:gap-42
+                  snap-x snap-mandatory"
             >
                 {products.map(item => (
-                    <ProductCard className="product flex-shrink-0" {...item} key={item.id}/>
+                    <ProductCard className="product" {...item} key={item.id}/>
                 ))}
             </div>
             <MdChevronRight onClick={slideRight}
-                            className="w-1/2 cursor-pointer flex items-center justify-center h-2/3"
+                            className="chevron"
                             size={1}/>
             {/*<span className="cursor-pointer flex-[0.13] flex items-center justify-center h-full">{'>'}</span>*/}
         </div>

@@ -1,3 +1,35 @@
-.horizontalList span{
+.horizontalList span {
     font-size: 50px;
 }
+
+
+#slider::-webkit-scrollbar {
+    height: 15px;
+}
+
+#slider::-webkit-scrollbar-track {
+    background: rgba(215, 215, 215, 1);
+    border-radius: 10px;
+    @apply shadow-[inset_0_4px_2px_rgba(0,0,0,.2)]
+}
+
+#slider::-webkit-scrollbar-thumb {
+    background: rgba(164, 164, 164, .7);
+
+    border-radius: 10px;
+
+}
+
+#slider:hover::-webkit-scrollbar-thumb {
+    background: rgba(164, 164, 164, 1);
+}
+
+
+.chevron {
+    @apply w-1/12 cursor-pointer flex items-center justify-center h-2/3;
+    min-width: var(--chevron-width);
+}
+
+
+
+

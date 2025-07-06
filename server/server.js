@@ -1,5 +1,5 @@
 ﻿import express from 'express';
-import {calculateProductPrices} from './DataAccessLayer.js';
+import {calculateProductPrices,getGoldPricePerGramUSD} from './DataAccessLayer.js';
 import cors from 'cors';
 const app = express();
 app.use(cors())
@@ -13,8 +13,9 @@ app.get('/api/products', async (req, res) => {
     }
 });
 
-app.get('/', (req, res) => {
-    res.send('Backend is running!');
+app.get('/', async (req, res) => {
+    const gold = await getGoldPricePerGramUSD();
+    res.send(`Backend is running! ${gold}`);
 });
 
 

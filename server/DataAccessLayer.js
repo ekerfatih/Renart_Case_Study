@@ -92,11 +92,13 @@ export const products = [
 
 const GRAMS_PER_TROY_OUNCE = 31.1034768;
 
+const API_KEY = process.env.GOLD_API_KEY;
+
 export async function getGoldPricePerGramUSD() {
     const requestOptions = {
         method: 'GET',
         headers: {
-            'x-access-token': 'goldapi-1nme1vsmcqn8v56-io',
+            'x-access-token': API_KEY,
             'Content-Type': 'application/json'
         }
     };

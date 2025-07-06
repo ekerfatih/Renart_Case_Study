@@ -6,6 +6,8 @@
         --color-yellow-gold: #E6CA97;
         --color-white-gold: #D9D9D9;
         --color-rose-gold: #E1A4A9;
+        --chevron-width: calc(min(50px + 2vw, 60px));
+        --ring-gap:  11rem;
     }
 
     @font-face {
