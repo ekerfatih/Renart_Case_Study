@@ -5,7 +5,7 @@ const ProductContext = createContext();
 
 const ProductContextProvider = ({children}) => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(products);
 
     const fetchProducts = async () => {
         try {
@@ -19,7 +19,6 @@ const ProductContextProvider = ({children}) => {
 
     useEffect(() => {
         fetchProducts();
-
     }, []);
 
     return (

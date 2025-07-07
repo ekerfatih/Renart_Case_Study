@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import ProductCard from "./ProductCard.jsx";
 import {useProductContext} from "../Context/ProductContext.jsx";
 import {MdChevronLeft, MdChevronRight} from "react-icons/md";
@@ -7,24 +7,29 @@ import {MdChevronLeft, MdChevronRight} from "react-icons/md";
 const HorizontalList = () => {
 
     //min width 300 + gap-42 ~ 168px
-    const slideLeft = () => {
+    const slide = (direction) => {
         const slider = document.getElementById("slider");
-        slider.scrollLeft -= 468;
-    }
-    const slideRight = () => {
-        const slider = document.getElementById("slider");
-        slider.scrollLeft += 468;
+        const firstItem = slider.querySelector('.product');
+        const itemWidth = firstItem.offsetWidth;
+
+
+        if (direction === 'right') {
+            slider.scrollBy({left: itemWidth, behavior: 'smooth'});
+        } else if (direction === 'left') {
+            slider.scrollBy({left: -itemWidth, behavior: 'smooth'});
+        }
     }
 
     const products = useProductContext();
-    console.log(products)
     if (!products) return null;
     return (
-        <div className="horizontalList relative flex justify-between w-full h-fitllll lg:gap-3">
+        <div className="horizontalList relative flex justify-between w-full h-fit lg:gap-3">
             {/*<span className="cursor-pointer flex-[0.13] flex items-center justify-center h-full">{'<'}</span>*/}
-            <MdChevronLeft onClick={slideLeft}
-                           className="chevron"
-                           size={1}/>
+            <div className="flex">
+                <MdChevronLeft onClick={() => slide("left")}
+                               className="chevron"
+                               size={1}/>
+            </div>
             <div
                 id="slider"
                 className="flex overflow-x-scroll whitespace-nowrap !scroll-smooth
@@ -38,12 +43,17 @@ const HorizontalList = () => {
                   snap-x snap-mandatory"
             >
                 {products.map(item => (
-                    <ProductCard className="product" {...item} key={item.id}/>
+                    <div key={item.id}
+                         className="product min-[300px]:min-w-[100%] sm:min-w-[44%]  md:min-w-[45%] xl:min-w-[30%] 2xl:min-w-[17%]">
+                        <ProductCard {...item} />
+                    </div>
                 ))}
             </div>
-            <MdChevronRight onClick={slideRight}
-                            className="chevron"
-                            size={1}/>
+            <div className="flex">
+                <MdChevronRight onClick={() => slide("right")}
+                                className="chevron"
+                                size={1}/>
+            </div>
             {/*<span className="cursor-pointer flex-[0.13] flex items-center justify-center h-full">{'>'}</span>*/}
         </div>
     );

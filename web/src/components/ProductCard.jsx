@@ -11,15 +11,8 @@ const ProductCard = (props) => {
     const starCount = Math.floor(popularityScore * 10) / 2;
 
     return (
-        <div className="
-        min-[300px]:min-w-[100%]
-         sm:min-w-[44%]
-         md:min-w-[45%]
-         xl:min-w-[30%]
-         2xl:min-w-[17%]
-        mb-20
-         flex flex-col snap-start">
-            <img className="rounded-4xl object-cover aspect-square" src={image} alt="######"/>
+        <div className="max-sm:mb-10 sm:mb-20 flex flex-col snap-start">
+            <img className="rounded-4xl object-cover aspect-square" src={image} alt={name}/>
             <div className="text-left">
                 <p className="font-montserrat-medium text-[15px] pt-4">{name}</p>
                 <p className="font-montserrat text-[15px] pt-1 pb-3">  {`$${price.toFixed(2)} USD`}</p>
@@ -30,7 +23,7 @@ const ProductCard = (props) => {
                 </div>
                 <p className="font-avenir font-extralight text-[12px] py-1">{toCamel(color)} Gold</p>
                 <div className="flex gap-3">
-                    <StarRating rating={popularityScore * 5}/>
+                    <StarRating rating={starCount}/>
                     <p className="font-avenir">{starCount}/5</p>
                 </div>
             </div>
