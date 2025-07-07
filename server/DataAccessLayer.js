@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 export const products = [
     {
         "id": 1,
@@ -89,24 +93,27 @@ export const products = [
     }
 ]
 
-
 const GRAMS_PER_TROY_OUNCE = 31.1034768;
 
-const API_KEY = process.env.GOLD_API_KEY;
+const GOLD_API_KEY = process.env.GOLD_API_KEY;
+const GOLD_API_URL = 'https://goldpricez.com/api/rates/currency/usd/measure/ounce';
 
 export async function getGoldPricePerGramUSD() {
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            'x-access-token': API_KEY,
-            'Content-Type': 'application/json'
-        }
-    };
-    const res = await fetch('https://www.goldapi.io/api/XAU/USD', requestOptions);
-    if (!res.ok) throw new Error(`Gold API error: ${res.status} ${res.statusText}`);
-    const data = await res.json();
-    return data.price / GRAMS_PER_TROY_OUNCE;
+    try {
+        const res = await fetch(GOLD_API_URL, {
+            method: 'GET',
+            headers: {'X-Api-Key': GOLD_API_KEY ,'Content-Type': 'application/json'}
+        });
+        const ouncePriceUSD = await JSON.parse(await res.json()).ounce_price_usd;
+
+        return ouncePriceUSD / GRAMS_PER_TROY_OUNCE;
+
+    } catch (err) {
+        console.error('Error fetching gold price per gram:', err.message);
+        return null;
+    }
 }
+
 
 export async function calculatePrice(popularityScore, weight, goldPrice) {
     return (popularityScore + 1) * weight * goldPrice;

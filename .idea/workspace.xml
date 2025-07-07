@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51b91983-b7ae-48dc-8851-726af35b34b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/public/diamond.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/components/Loading.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/DataAccessLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/DataAccessLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/Context/ProductContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Context/ProductContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/HorizontalList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/HorizontalList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/ProductCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
       <workItem from="1751703996688" duration="22527000" />
       <workItem from="1751742452907" duration="5911000" />
       <workItem from="1751785329319" duration="19495000" />
-      <workItem from="1751867341871" duration="9876000" />
+      <workItem from="1751867341871" duration="17069000" />
     </task>
     <servers />
   </component>

@@ -1,9 +1,9 @@
 ﻿import express from 'express';
-import {calculateProductPrices,getGoldPricePerGramUSD} from './DataAccessLayer.js';
+import {calculateProductPrices, getGoldPricePerGramUSD} from './DataAccessLayer.js';
 import cors from 'cors';
+
 const app = express();
 app.use(cors())
-
 app.get('/api/products', async (req, res) => {
     try {
         const products = await calculateProductPrices();
@@ -19,7 +19,6 @@ app.get('/', async (req, res) => {
 });
 
 
-
 app.listen(8080, () => {
-    console.log('Server is running on port 8080');
+    console.log('Server started');
 });
